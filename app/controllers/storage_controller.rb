@@ -1,6 +1,7 @@
-require './app/helpers/storage_helper.rb'
+require './app/services/storage_service.rb'
 class StorageController < ApplicationController
+
   def upload
-    helpers.upload_file("README.md")
+    StorageService.new.download
   end
 end
