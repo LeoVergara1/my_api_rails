@@ -28,6 +28,23 @@ paths:
               required:
               - title
               - content
+  "/storage":
+    post:
+      summary: Upload file in storage
+      tags:
+      - Storage
+      parameters: []
+      responses:
+        '201':
+          description: blog created
+        '422':
+          description: invalid request
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: file
+        required: true
 servers:
 - url: https://{defaultHost}
   variables:
